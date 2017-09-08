@@ -6,7 +6,17 @@ body {
 header {
   color: #fff;
   background-color: #103D5D;
-  padding: 25px 0 25px 15px;
+  padding: 33px 0 25px 15px;
+}
+
+header p {
+  width: 400px;
+  margin: 0 auto;
+}
+
+header .wrapper {
+  display: flex;
+  justify-content: space-between;
 }
 
 header h1 {
@@ -15,8 +25,7 @@ header h1 {
   letter-spacing: 0.3px;
   display: inline-block;
   margin: 0;
-  vertical-align: middle;
-  
+  vertical-align: middle;  
 }
 
 .fa {
@@ -131,4 +140,17 @@ button {
   font-size: 14px;
   box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
   padding: 10px 6px;
+}
+
+.user-profile {
+  position: fixed;
+  bottom: 20px;
+  right: 40px;
+  width: 100px;
+  height: 100px;
+}
+
+.user-profile img {
+  border-radius: 50%;
+  max-width: 100%;
 }
