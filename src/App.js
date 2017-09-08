@@ -1,21 +1,48 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      currentItem: '',
+      username: ''
+    }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange(e) {
+    this.setState({
+      [e.target.name]: e.target.value
+    });
+  }
+
   render() {
+    const { username, currentItem } = this.state;
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <div className='app'>
+        <header>
+            <div className='wrapper'>
+              <h1>Fun Food Friends</h1>
+            </div>
+        </header>
+        <div className='container'>
+          <section className='add-item'>
+              <form>
+                <input type="text" name="username" placeholder="What's your name?" onChange={this.handleChange} value={username} />
+                <input type="text" name="currentItem" placeholder="What are you bringing?" onChange={this.handleChange} value={currentItem} />
+                <button>Add Item</button>
+              </form>
+          </section>
+          <section className='display-item'>
+            <div className='wrapper'>
+              <ul>
+              </ul>
+            </div>
+          </section>
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
       </div>
     );
   }
 }
-
 export default App;
